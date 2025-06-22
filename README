@@ -1,0 +1,72 @@
+Credit Card Fraud Detection
+🔍 Overview
+Credit card fraud detection is a crucial application of machine learning in the financial sector to prevent unauthorized and fraudulent transactions. Due to the rarity of fraud cases compared to legitimate ones, this is a highly imbalanced classification problem where detecting fraudulent transactions (the minority class) is critical.
+
+🎯 Problem Statement
+The objective of this project is to build a machine learning model that can accurately classify credit card transactions as either fraudulent or legitimate. The dataset used is highly imbalanced, which poses additional challenges for the model's performance.
+
+📦 Dataset Information
+Source: Kaggle Credit Card Fraud Detection Dataset
+
+Records: 284,807 transactions
+
+Fraudulent Transactions: 492 (0.172%)
+
+Features:
+
+28 anonymized features (V1, V2, ..., V28)
+
+Time: Time elapsed between this transaction and the first transaction.
+
+Amount: Transaction amount.
+
+Class: Target variable (0 = Legitimate, 1 = Fraudulent)
+
+⚙️ Machine Learning Workflow
+1. Data Preprocessing:
+Handling missing/null values.
+
+Feature scaling (Amount and Time normalized using StandardScaler).
+
+Addressing class imbalance using:
+
+Undersampling (reducing the majority class).
+
+Oversampling (using SMOTE).
+
+2. Model Selection:
+Logistic Regression
+
+Random Forest Classifier
+
+XGBoost Classifier
+
+These models are evaluated based on their ability to detect fraudulent transactions while minimizing false positives.
+
+3. Evaluation Metrics:
+Due to imbalanced classes, we do not rely solely on accuracy. Instead, we consider:
+
+Precision: How many predicted frauds are actual frauds?
+
+Recall (Sensitivity): How many actual frauds were detected?
+
+F1-Score: Harmonic mean of precision and recall.
+
+ROC-AUC: Ability to distinguish between classes.
+
+📊 Key Challenges
+Severe Class Imbalance: Less than 0.2% of transactions are fraudulent.
+
+Risk of False Negatives: Missing a fraudulent transaction can lead to financial loss.
+
+Model Generalization: Avoid overfitting while maintaining high recall on minority class.
+
+🏆 Conclusion
+The project demonstrates the effectiveness of machine learning techniques in detecting fraudulent transactions, even in highly imbalanced datasets. Techniques such as SMOTE, proper evaluation metrics (like F1-Score and AUC-ROC), and ensemble models (Random Forest/XGBoost) significantly improve fraud detection performance.
+
+🚀 Future Scope
+Deploy the model as a real-time API for transaction screening.
+
+Use advanced anomaly detection methods (e.g., Autoencoders, Isolation Forest).
+
+Incorporate temporal and sequence-based data for improved detection
